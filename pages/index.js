@@ -4,7 +4,6 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import BlogCard from "@/components/blogcard";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
@@ -16,7 +15,7 @@ export async function getStaticProps() {
 	  _id,
 	  title,
 	  metadesc,
-	  image
+	  blogimage
 	}`;
 
 	try {
@@ -93,22 +92,30 @@ export default function Home({ blogs }) {
 					</ul>
 				</div>
 			</div>
-
-			<div className={styles.blog}>
-				<h1>From The Blog</h1>
-				<div className={styles.blogcard}>
-					{Array.isArray(blogs) && blogs.length > 0 ? (
-						blogs.map((item) => (
-							<BlogCard
-								key={item._id}
-								title={item.title}
-								description={item.metadesc}
-							/>
-						))
-					) : (
-						<p>No blogs available</p>
-					)}
-				</div>
+			<h1 className={styles.blog}>From the Blog</h1>
+			<div className={styles.bd}>
+				{Array.isArray(blogs) && blogs.length > 0 ? (
+					blogs.map((item) => (
+						<div>
+							<div className={styles.blogcard}>
+								<img
+									className={styles.blogimg}
+									src={builder.image(item.blogimage).width(200).url()}
+								/>
+								<h2 className={styles.blogtitle}>{item.title}</h2>
+								<p className={styles.blogpara}>{item.metadesc}</p>
+								<Link
+									className={styles.bloglink}
+									key={item.slug}
+									href={"/blog/" + item.slug}>
+									Read More
+								</Link>
+							</div>
+						</div>
+					))
+				) : (
+					<p>No blogs available</p>
+				)}
 			</div>
 		</>
 	);
