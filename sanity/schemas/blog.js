@@ -79,11 +79,7 @@ export default {
             }
           ]
         },
-      {
-          title: 'Created At',
-          name: 'createdAt',
-          type: 'datetime', 
-      },
+      
 
   ]
 }
