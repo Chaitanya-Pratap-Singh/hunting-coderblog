@@ -120,3 +120,34 @@
 	border-radius: 20px;
 	padding: 0.5rem;
 }
+
+.para{
+	width: 40vw;
+	margin: 0 auto;
+	line-height: 20.75px;
+	font-size: 14px;
+	color: white;
+	font-family: var(--font--Oswald);
+
+}
+
+.aboutHeader{
+	margin-top: 1rem;
+
+}
+
+.aboutMain{
+	margin-bottom: 1rem;
+	
+}
+
+
+.mapContainer {
+	display: flex;
+	justify-content: center;
+	margin: 2rem; /* Adjust margin-top as needed */
+  }
+  
+  .mapContainer iframe {
+	border: 1px solid #ccc; /* Example border for the iframe */
+  }
