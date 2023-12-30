@@ -9,37 +9,27 @@ import imageUrlBuilder from "@sanity/image-url";
 
 import { getClient } from "@/lib/sanity";
 
-export async function getStaticProps() {
-	const client = getClient();
-	const query = `*[_type == "blog"][0..2]{
-	  _id,
-	  title,
-	  metadesc,
-	  blogimage
-	}`;
-
-	try {
-		const blogs = await client.fetch(query);
-
-		return {
-			props: {
-				blogs,
-			},
-		};
-	} catch (error) {
-		console.error("Error fetching Sanity data:", error);
-		return {
-			props: {
-				blogs: [], // Return an empty array or handle the error accordingly
-			},
-		};
+export async function getServerSideProps(context) {
+	const client = createClient({
+	  projectId: "f8alas9q",
+	  dataset: "production",
+	  useCdn: false
+	});
+	const query = `*[_type == "blog"][0...3]`;
+	const blogs = await client.fetch(query);
+  
+  
+	return {
+	  props: {
+		blogs
+	  }
 	}
-}
+  }
 export default function Home({ blogs }) {
 	const client = createClient({
 		projectId: "f8alas9q",
 		dataset: "production",
-		useCdn: true,
+		useCdn: false,
 	});
 
 	const builder = imageUrlBuilder(client);
@@ -104,12 +94,8 @@ export default function Home({ blogs }) {
 								/>
 								<h2 className={styles.blogtitle}>{item.title}</h2>
 								<p className={styles.blogpara}>{item.metadesc}</p>
-								<Link
-									className={styles.bloglink}
-									key={item.slug}
-									href={"/blog/" + item.slug}>
-									Read More
-								</Link>
+							<Link key={item.slug.current} href={"/blog/" + item.slug.current} >
+								Read More</Link>
 							</div>
 						</div>
 					))

@@ -1,0 +1,29 @@
+/** @format */
+
+.title {
+	color: white;
+	font-size: 50px;
+    font-family: var(--font--Oswald);
+	text-align: center;
+}
+
+.image {
+	height: 350px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.contentcontainer{
+    color: white;
+    font-family: var(--font--Oswald);
+    font-weight: 500;
+    display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
