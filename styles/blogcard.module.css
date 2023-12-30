@@ -1,0 +1,39 @@
+.blogcard{
+	border-radius: 20px;
+	border: solid white;
+	height: 300px;
+    width: 300px;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.blogtitle{
+	color: white;
+	font-size: 20px;
+	line-height: 26px;
+	font-family: var(--font--Oswald);
+	font-weight: 400;
+}
+
+
+.blogpara{
+	color: white;
+	font-size: 14px;
+	line-height: 26px;
+	font-family: var(--font--Oswald);
+	font-weight: 300;
+}
+
+.bloglink{
+	font-family: var(--font--Oswald);
+	font-weight: 300;
+	padding: 0.3rem;
+	color: #383FEF;
+	cursor: pointer;
+}
+
+.blogimg{
+	height: 150px;
+	width: 300px;
+	border-radius: 20px;
+}

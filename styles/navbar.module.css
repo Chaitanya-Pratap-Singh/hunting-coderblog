@@ -1,0 +1,38 @@
+/** @format */
+
+.rule {
+	width: 80vw;
+	margin: 0 auto;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 80vw;
+    margin: 0 auto;
+}
+
+.navlinks {
+    font-family: var(--font--Oswald);
+	font-weight: 400;
+	font-size: 16px;
+    padding: 0;
+}
+.navlinks > ul {
+	display: flex;
+	justify-content: flex-start;
+	gap: 2rem;
+	list-style: none;
+    padding: 0;
+}
+.navlinks li {
+	color: white;
+	text-decoration: none;
+}
+.link {
+	text-decoration: none;
+}
+.search:hover{
+    cursor: pointer;
+}

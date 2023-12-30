@@ -1,0 +1,25 @@
+.footer{
+    width: 100%;
+    background-color: #383FEF;
+    margin: 0;
+    padding: 0%;
+    height: 90px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 15px;
+}
+.link {
+	text-decoration: none;
+	color: white;
+
+}
+
+.footerlink{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+}
