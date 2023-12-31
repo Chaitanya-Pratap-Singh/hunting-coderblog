@@ -31,7 +31,6 @@
 	text-align: center;
 }
 
-
 .domains {
 	display: flex;
 	align-items: center;
@@ -72,6 +71,8 @@
 .bd {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 }
 
 .blogcard {
@@ -79,7 +80,8 @@
 	border: solid white;
 	height: 430px;
 	width: 300px;
-	margin: 2rem;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
 	padding: 1rem;
 	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
@@ -150,28 +152,53 @@
 	.domains > h1 {
 		font-size: 44px;
 	}
-	.about p{
+	.about p {
 		font-size: 10px;
 		width: 70vw;
 	}
 
-	.image{
+	.image {
 		width: 300px;
 		height: auto;
 	}
 
-	.domlinks{
+	.domlinks {
 		font-size: 12px;
 	}
-	.blog{
+	.blog {
 		font-size: 44px;
 		text-align: center;
 	}
 
-	.blogpara{
+	.blogpara {
 		font-size: 10px;
 	}
-	.blogtitle{
+	.blogtitle {
 		font-size: 20px;
+	}
+}
+@media (width<=320px) {
+	.blogcard {
+		width: 255px;
+		height: 380px;
+	}
+	.blogimg {
+		width: 250px;
+		height: auto;
+	}
+	.image {
+		width: 280px;
+		height: auto;
+	}
+	.domlinks ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.about > h1,
+	.domains > h1,
+	.blog {
+		font-size: 40px;
 	}
 }

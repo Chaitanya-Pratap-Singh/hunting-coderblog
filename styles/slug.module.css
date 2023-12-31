@@ -25,9 +25,21 @@
     display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 50vw;
 }
 
-.date{
-	color: white;
+@media(width<=768px)
+{
+	.contentcontainer{
+		font-size: 18px;
+		width: 70%;
+	}
+	.title{
+		font-size: 36px;
+	}
+
+	.image{
+		height: 250px; 
+		width: 80vw;
+	}
 }

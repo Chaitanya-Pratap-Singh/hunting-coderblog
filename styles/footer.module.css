@@ -1,8 +1,6 @@
 .footer{
-    width: 100%;
+    width: 100vw;
     background-color: #383FEF;
-    margin: 0;
-    padding: 0%;
     height: 90px;
     color: white;
     display: flex;
@@ -25,9 +23,7 @@
 }
 
 @media (width < 768px) {
-    .footer{
-        width: 100vw;
-    }
+    
     .copy,.link{
         font-size: 12px;
     }
