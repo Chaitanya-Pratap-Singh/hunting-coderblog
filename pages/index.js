@@ -58,7 +58,7 @@ export default function Home({ blogs }) {
 				</p>
 				<br />
 				<br />
-				<Image src="/homeimg.jpg" width={427} height={366}></Image>
+				<Image className={styles.image} src="/homeimg.jpg" width={427} height={366}></Image>
 			</div>
 			<div className={styles.domains}>
 				<h1>Our Domains</h1>

@@ -23,3 +23,13 @@
     justify-content: space-around;
     gap: 3rem;
 }
+
+@media (width < 768px) {
+    .footer{
+        width: 100vw;
+    }
+    .copy,.link{
+        font-size: 12px;
+    }
+
+}

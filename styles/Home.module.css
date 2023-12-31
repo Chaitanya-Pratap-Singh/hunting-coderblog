@@ -16,7 +16,8 @@
 	flex-direction: column;
 }
 
-.about > h1 {
+.about > h1,
+.domains > h1 {
 	font-weight: 700;
 	font-size: 48px;
 	font-family: var(--font--Oswald);
@@ -27,12 +28,9 @@
 	margin: 0 auto;
 	line-height: 20.75px;
 	font-size: 14px;
+	text-align: center;
 }
 
-.about Image {
-	border-radius: 10px;
-	padding: 2rem;
-}
 
 .domains {
 	display: flex;
@@ -40,12 +38,6 @@
 	justify-content: center;
 	color: white;
 	flex-direction: column;
-}
-
-.domains > h1 {
-	font-weight: 700;
-	font-size: 48px;
-	font-family: var(--font--Oswald);
 }
 
 .domlinks {
@@ -57,6 +49,7 @@
 .domlinks > ul {
 	display: flex;
 	justify-content: flex-start;
+	flex-wrap: wrap;
 	gap: 2rem;
 	list-style: none;
 	padding: 0;
@@ -78,6 +71,7 @@
 
 .bd {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .blogcard {
@@ -121,33 +115,62 @@
 	padding: 0.5rem;
 }
 
-.para{
+.para {
 	width: 40vw;
 	margin: 0 auto;
 	line-height: 20.75px;
 	font-size: 14px;
 	color: white;
 	font-family: var(--font--Oswald);
-
 }
 
-.aboutHeader{
+.aboutHeader {
 	margin-top: 1rem;
-
 }
 
-.aboutMain{
+.aboutMain {
 	margin-bottom: 1rem;
-	
 }
-
 
 .mapContainer {
 	display: flex;
 	justify-content: center;
 	margin: 2rem; /* Adjust margin-top as needed */
-  }
-  
-  .mapContainer iframe {
+}
+
+.mapContainer iframe {
 	border: 1px solid #ccc; /* Example border for the iframe */
-  }
+}
+
+@media (width < 768px) {
+	.title {
+		font-size: 28px;
+	}
+	.about > h1,
+	.domains > h1 {
+		font-size: 44px;
+	}
+	.about p{
+		font-size: 10px;
+	}
+
+	.image{
+		width: 300px;
+		height: auto;
+	}
+
+	.domlinks{
+		font-size: 12px;
+	}
+	.blog{
+		font-size: 44px;
+		text-align: center;
+	}
+
+	.blogpara{
+		font-size: 10px;
+	}
+	.blogtitle{
+		font-size: 20px;
+	}
+}

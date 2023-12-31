@@ -19,7 +19,7 @@ const Footer = () => {
             Mail
           </Link>
         </div>
-          <p>Copyright © {current_year}, Hunting Coder LLC. All Rights Reserved.</p>
+          <p className={styles.copy}>Copyright © {current_year}, Hunting Coder LLC. All Rights Reserved.</p>
       </div>
     );
   }
