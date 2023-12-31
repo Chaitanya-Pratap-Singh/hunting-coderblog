@@ -7,7 +7,6 @@ import Link from "next/link";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
-import { getClient } from "@/lib/sanity";
 
 export async function getServerSideProps(context) {
 	const client = createClient({

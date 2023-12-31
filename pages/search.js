@@ -1,38 +1,78 @@
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
+import styles from "@/styles/Home.module.css"
+import React from "react";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { createClient } from "next-sanity";
+import imageUrlBuilder from "@sanity/image-url";
 
-const SearchPage = () => {
-  const router = useRouter();
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+export async function getServerSideProps(context) {
+    const client = createClient({
+        projectId: "f8alas9q",
+        dataset: "production",
+        useCdn: false
+    });
+    const query = `*[_type == "blog"]`;
+    const blogs = await client.fetch(query);
 
-  useEffect(() => {
-    if (router.query.q) {
-      setSearchQuery(router.query.q);
-      // Perform search or fetch data based on the query
-      // Here, searchData is assumed to be an array of objects representing blog posts
-      const searchData = []; // Replace this with your actual data fetching logic
-      const results = searchData.filter(item =>
-        item.title.toLowerCase().includes(router.query.q.toLowerCase())
-      );
-      setSearchResults(results);
+    return {
+        props: {
+            blogs
+        }
     }
-  }, [router.query.q]);
+}
 
-  return (
-    <div>
-      <h1>Search Results for "{searchQuery}"</h1>
-      <ul>
-        {searchResults.map(result => (
-          <li key={result.slug}>
-            <h2>{result.title}</h2>
-            <p>{result.blogImage}</p>
-            {/* Add other relevant information here */}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+export default function SearchPage({ blogs }) {
+    const router = useRouter();
+    const [searchQuery, setSearchQuery] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+    const client = createClient({
+        projectId: "f8alas9q",
+        dataset: "production",
+        useCdn: false,
+    });
+
+    const builder = imageUrlBuilder(client);
+
+    useEffect(() => {
+        if (router.query.q && Array.isArray(blogs)) {
+            setSearchQuery(router.query.q);
+
+			const filteredResults = blogs.filter((item) =>
+			item.title.toLowerCase().includes(router.query.q.toLowerCase()) ||
+			item.metadesc.toLowerCase().includes(router.query.q.toLowerCase())
+		);
+            setSearchResults(filteredResults);
+        }
+    }, [router.query.q, blogs]);
+
+    return (
+        <div>
+            <h1 className={styles.searchtitle}>Search Results for "{searchQuery}"</h1>
+            <div className={styles.bd}>
+                {Array.isArray(searchResults) && searchResults.length > 0 ? (
+                    searchResults.map((item) => (
+                        <div key={item._id}>
+                            <div className={styles.blogcard}>
+                                <img
+                                    className={styles.blogimg}
+                                    src={builder.image(item.blogimage).width(200).url()}
+                                    alt={item.title}
+                                />
+                                <h2 className={styles.blogtitle}>{item.title}</h2>
+                                <p className={styles.blogpara}>{item.metadesc}</p>
+                                <Link href={"/blog/" + item.slug.current}>
+                                    Read More
+                                </Link>
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    <p>No matching blogs found</p>
+                )}
+            </div>
+        </div>
+    );
 };
-
-export default SearchPage;

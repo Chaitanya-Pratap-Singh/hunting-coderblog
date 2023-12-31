@@ -144,6 +144,12 @@
 	border: 1px solid #ccc; /* Example border for the iframe */
 }
 
+.searchtitle{
+	color: white;
+	text-align: center;
+}
+
+
 @media (width < 768px) {
 	.title {
 		font-size: 28px;
