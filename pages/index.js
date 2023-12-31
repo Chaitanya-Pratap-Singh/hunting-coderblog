@@ -39,6 +39,7 @@ export default function Home({ blogs }) {
 					content="Hey there, code adventurers! Ready to embark on an epic quest through the digital universe? Welcome to Hunting Coder, your ultimate hideout for tech tales, coding conquests, and a bit of digital magic."
 				/>
 				<link rel="icon" href="/favicon.png" type="image/x-icon" />
+				<meta property="og:image" content="/homeimg.jpg" />
 			</Head>
 
 			<div className={styles.about}>
