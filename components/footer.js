@@ -7,11 +7,11 @@ const Footer = () => {
     return (
       <div className={styles.footer}>
         <div className={styles.footerlink}>
-          <Link href="https://1manstartup.com/privacy-policy" target="_blank" className={styles.link}>
+          <Link href="#" target="_blank" className={styles.link}>
             Privacy
           </Link>
           <span>|</span>
-          <Link href="https://1manstartup.com/terms-and-conditions" target="_blank" className={styles.link}>
+          <Link href="#" target="_blank" className={styles.link}>
             Terms
           </Link>
           <span>|</span>
@@ -19,7 +19,10 @@ const Footer = () => {
             Mail
           </Link>
         </div>
-          <p className={styles.copy}>Copyright © {current_year}, Hunting Coder LLC. All Rights Reserved.</p>
+          <p style={{ textAlign: "center" }} className={styles.copy}>Copyright © {current_year}, Hunting Coder LLC. All Rights Reserved.
+          <br />
+          Made with 💖 by <a href="https://github.com/Chaitanya-Pratap-Singh">Chaitanya</a>
+          </p>
       </div>
     );
   }
