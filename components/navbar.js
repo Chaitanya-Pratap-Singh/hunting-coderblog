@@ -2,15 +2,32 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import style from "@/styles/navbar.module.css"
-const Navbar = () => {
-    const [showMenu, setShowMenu] = useState(false);
+import { useRouter } from 'next/router';
 
+
+const Navbar = () => {
+    const [showSearchBar, setShowSearchBar] = useState(false);
+    const [searchQuery, setSearchQuery] = useState(''); // State to hold the search query
+    const [showMenu, setShowMenu] = useState(false);
+    const router = useRouter();
+
+    const toggleSearchBar = () => {
+        setShowSearchBar(!showSearchBar);
+    };
+    
     const toggleMenu = () => {
         setShowMenu(!showMenu);
+        setShowSearchBar(false);
     };
 
     const handleLinkClick = () => {
         setShowMenu(false); // Close menu when a link is clicked
+    };
+
+    const handleSearch = () => {
+        if (searchQuery.trim() !== '') {
+            router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+        }
     };
 
     return (
@@ -31,11 +48,22 @@ const Navbar = () => {
                     <div className={style.bar}></div>
                     <div className={style.bar}></div>
                 </div>
-                <div className={style.search}>
+                <div className={style.search} onClick={toggleSearchBar}>
                     <Image src="/search.svg" width={40} height={40} />
                 </div>
             </div>
             <hr className={style.rule} />
+            {showSearchBar && (
+                <div className={style.searchBar}>
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                    <button className={style.searchBtn} onClick={handleSearch}>Search</button>
+                </div>
+            )}
         </>
     );
 };
