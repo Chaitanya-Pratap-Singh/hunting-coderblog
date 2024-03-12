@@ -18,6 +18,7 @@
 .footerlink{
     margin-top: 1rem;
     display: flex;
+    color: white;
     align-items: center;
     justify-content: space-around;
     gap: 3rem;
