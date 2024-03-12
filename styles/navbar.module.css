@@ -1,0 +1,123 @@
+.rule {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.navlinks {
+    font-family: var(--font--Oswald);
+    font-weight: 400;
+    font-size: 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+}
+
+.navlinks ul {
+    display: flex;
+    gap: 1rem; 
+    list-style: none;
+    padding: 0;
+}
+
+.navlinks li {
+    color: white;
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;
+	color: white;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+.searchBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+.searchBar  input{
+    float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+.search:hover {
+    cursor: pointer;
+}
+.searchBtn{
+    background-color: #383FEF; 
+    border: none;
+    color: white;
+    padding:  .6rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+.hamburger {
+	display: none; 
+}
+
+/* Media query for smaller screens (mobile) */
+@media (max-width: 768px) {
+	.navlinks.showMenu {
+		display: flex; /* Show menu when the showMenu state is true */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #383FEF; 
+        padding: 1rem;
+        z-index: 10;
+    }
+	.navlinks {
+		display: none;
+	}
+	
+    .nav {
+        flex-direction: row; 
+        align-items: center;
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-around;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: transform 0.3s ease;
+    }
+
+
+
+    .search {
+        order: 3; 
+    }
+}

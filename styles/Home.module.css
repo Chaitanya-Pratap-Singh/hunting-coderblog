@@ -1,0 +1,210 @@
+/** @format */
+
+.title {
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+	font-weight: 400;
+	font-size: 32px;
+	font-family: var(--font--Oswald);
+}
+
+.about {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	flex-direction: column;
+}
+
+.about > h1,
+.domains > h1 {
+	font-weight: 700;
+	font-size: 48px;
+	font-family: var(--font--Oswald);
+}
+
+.about > p {
+	width: 40vw;
+	margin: 0 auto;
+	line-height: 20.75px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.domains {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	flex-direction: column;
+}
+
+.domlinks {
+	font-family: var(--font--Oswald);
+	font-weight: 400;
+	font-size: 16px;
+	padding: 0;
+}
+.domlinks > ul {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 2rem;
+	list-style: none;
+	padding: 0;
+}
+.domlinks li {
+	color: white;
+	text-decoration: none;
+}
+.link {
+	text-decoration: none;
+}
+
+.blog {
+	font-weight: 700;
+	font-size: 48px;
+	font-family: var(--font--Oswald);
+	color: white;
+}
+
+.bd {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.blogcard {
+	border-radius: 20px;
+	border: solid white;
+	height: 430px;
+	width: 300px;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.blogtitle {
+	color: white;
+	font-size: 20px;
+	line-height: 26px;
+	font-family: var(--font--Oswald);
+	font-weight: 400;
+}
+
+.blogpara {
+	color: white;
+	font-size: 14px;
+	line-height: 26px;
+	font-family: var(--font--Oswald);
+	font-weight: 300;
+}
+
+.bloglink {
+	font-family: var(--font--Oswald);
+	font-weight: 300;
+	padding: 0.3rem;
+	color: #383fef;
+	cursor: pointer;
+}
+
+.blogimg {
+	height: 200px;
+	width: 300px;
+	border-radius: 20px;
+	padding: 0.5rem;
+}
+
+.para {
+	width: 40vw;
+	margin: 0 auto;
+	line-height: 20.75px;
+	font-size: 14px;
+	color: white;
+	font-family: var(--font--Oswald);
+}
+
+.aboutHeader {
+	margin-top: 1rem;
+}
+
+.aboutMain {
+	margin-bottom: 1rem;
+}
+
+.mapContainer {
+	display: flex;
+	justify-content: center;
+	margin: 2rem; /* Adjust margin-top as needed */
+}
+
+.mapContainer iframe {
+	border: 1px solid #ccc; /* Example border for the iframe */
+}
+
+.searchtitle{
+	color: white;
+	text-align: center;
+}
+
+
+@media (width < 768px) {
+	.title {
+		font-size: 28px;
+	}
+	.about > h1,
+	.domains > h1 {
+		font-size: 44px;
+	}
+	.about p {
+		font-size: 10px;
+		width: 70vw;
+	}
+
+	.image {
+		width: 300px;
+		height: auto;
+	}
+
+	.domlinks {
+		font-size: 12px;
+	}
+	.blog {
+		font-size: 44px;
+		text-align: center;
+	}
+
+	.blogpara {
+		font-size: 10px;
+	}
+	.blogtitle {
+		font-size: 20px;
+	}
+}
+@media (width<=320px) {
+	.blogcard {
+		width: 255px;
+		height: 380px;
+	}
+	.blogimg {
+		width: 250px;
+		height: auto;
+	}
+	.image {
+		width: 280px;
+		height: auto;
+	}
+	.domlinks ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.about > h1,
+	.domains > h1,
+	.blog {
+		font-size: 28px;
+	}
+}
