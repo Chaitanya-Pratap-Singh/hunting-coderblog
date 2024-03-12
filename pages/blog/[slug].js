@@ -31,6 +31,7 @@ export async function getStaticProps({ params }) {
       content,
       metadesc,
       blogimage,
+      createdAt
     }`;
     
     const blog = await client.fetch(query, { slug });

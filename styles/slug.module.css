@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /** @format */
 
 .title {
@@ -42,4 +43,50 @@
 		height: 250px; 
 		width: 80vw;
 	}
+=======
+/** @format */
+
+.title {
+	color: white;
+	font-size: 50px;
+    font-family: var(--font--Oswald);
+	text-align: center;
+}
+
+.image {
+	height: 350px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.contentcontainer{
+    color: white;
+    font-family: var(--font--Oswald);
+    font-weight: 500;
+	font-size: 22px;
+    display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50vw;
+}
+
+@media(width<=768px)
+{
+	.contentcontainer{
+		font-size: 18px;
+		width: 70%;
+	}
+	.title{
+		font-size: 36px;
+	}
+
+	.image{
+		height: 250px; 
+		width: 80vw;
+	}
+>>>>>>> parent of da53032 (all errors fixed)
 }
