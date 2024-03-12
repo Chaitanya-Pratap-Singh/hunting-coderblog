@@ -4,7 +4,8 @@ import { PortableText } from "@portabletext/react"
 import { useRouter } from 'next/router';
 import imageUrlBuilder from "@sanity/image-url";
 import { getClient } from '@/lib/sanity';
-import styles from "@/styles/slug.module.css"
+import styles from "@/styles/slug.module.css";
+import { richText } from "@/components/richText";
 
 export async function getStaticPaths() {
   const client = getClient();
@@ -78,7 +79,7 @@ export default function Blog({ blog }) {
         <h1  className={styles.title} >{blog.title}</h1>
         <img className={styles.image} src={builder.image(blog.blogimage).width(200).url()} alt={blog.blogimage.caption} />
         <div className={styles.contentcontainer}>
-        <PortableText className ={styles.content} value={blog.content} />
+        <PortableText className ={styles.content} value={blog.content}  components={richText} />
         </div>
       </div>
     </>
