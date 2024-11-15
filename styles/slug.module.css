@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /** @format */
 
 .title {
@@ -47,15 +48,21 @@
 =======
 =======
 >>>>>>> parent of d6808f9 (fixed  richtext)
+=======
+>>>>>>> secondary/main
 /** @format */
 
 .title {
 	color: white;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	font-size: 50px;
 =======
 	font-size: 36px;
 >>>>>>> parent of d6808f9 (fixed  richtext)
+=======
+	font-size: 36px;
+>>>>>>> secondary/main
     font-family: var(--font--Oswald);
 	text-align: center;
 }
@@ -96,7 +103,10 @@
 		width: 80vw;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of da53032 (all errors fixed)
 =======
 >>>>>>> parent of d6808f9 (fixed  richtext)
+=======
+>>>>>>> secondary/main
 }

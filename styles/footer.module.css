@@ -16,8 +16,13 @@
 }
 
 .footerlink{
+<<<<<<< HEAD
     display: flex;
     color: white;
+=======
+    margin-top: 1rem;
+    display: flex;
+>>>>>>> secondary/main
     align-items: center;
     justify-content: space-around;
     gap: 3rem;

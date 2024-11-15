@@ -5,6 +5,10 @@ import { useRouter } from 'next/router';
 import imageUrlBuilder from "@sanity/image-url";
 import { getClient } from '@/lib/sanity';
 import styles from "@/styles/slug.module.css"
+<<<<<<< HEAD
+=======
+import { richText } from "@/components/richText";
+>>>>>>> secondary/main
 
 export async function getStaticPaths() {
   const client = getClient();
@@ -30,7 +34,10 @@ export async function getStaticProps({ params }) {
       content,
       metadesc,
       blogimage,
+<<<<<<< HEAD
       createdAt
+=======
+>>>>>>> secondary/main
     }`;
     
     const blog = await client.fetch(query, { slug });
@@ -79,7 +86,11 @@ export default function Blog({ blog }) {
         <h1  className={styles.title} >{blog.title}</h1>
         <img className={styles.image} src={builder.image(blog.blogimage).width(200).url()} alt={blog.blogimage.caption} />
         <div className={styles.contentcontainer}>
+<<<<<<< HEAD
         <PortableText className ={styles.content} value={blog.content} />
+=======
+        <PortableText className ={styles.content} value={blog.content} components={richText} />
+>>>>>>> secondary/main
         </div>
       </div>
     </>
