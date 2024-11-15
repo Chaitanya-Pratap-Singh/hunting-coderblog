@@ -1,4 +1,4 @@
-.footer{
+.footer {
     width: 100vw;
     background-color: #383FEF;
     height: 90px;
@@ -9,29 +9,22 @@
     flex-direction: column;
     font-size: 15px;
 }
-.link {
-	text-decoration: none;
-	color: white;
 
+.link {
+    text-decoration: none;
+    color: white;
 }
 
-.footerlink{
-<<<<<<< HEAD
+.footerlink {
+    margin-top: 1rem; /* Removed conflicting lines */
     display: flex;
-    color: white;
-=======
-    margin-top: 1rem;
-    display: flex;
->>>>>>> secondary/main
     align-items: center;
     justify-content: space-around;
     gap: 3rem;
 }
 
-@media (width < 768px) {
-    
-    .copy,.link{
+@media (max-width: 768px) {
+    .copy, .link {
         font-size: 12px;
     }
-
 }
